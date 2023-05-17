@@ -41,16 +41,26 @@ isEmpty=false;
   }
 
   submit() {
+    this.isEmpty=false;
+    this.movieResult=[]
     const movieName = this.emailFormControl.value;
 
     this.dataService.getMovieData(movieName);
 
     this.dataService.getMoviestListener().subscribe(response=>{
-      
-    console.log(response);
+    
+      if(response.Response=="False"){
+        this.isEmpty=true;
+        this.movieResult=[]
+      }else{
+        console.log(response);
       const movies: Movie= this.dataProcess.extractMovie(response);
+      this.movieResult=[]
       this.movieResult.push(movies);
+      
       console.log(this.movieResult);
+      }
+    
     })  
   
 

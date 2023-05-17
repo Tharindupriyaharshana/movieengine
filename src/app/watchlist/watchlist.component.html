@@ -25,7 +25,7 @@
                             
                               <mat-card-content>
                                 <h5>{{movie.Released}}</h5>
-                                <button mat-icon-button color="primary" aria-label="watchList" style="align-items: end;">
+                                <button mat-icon-button color="primary" aria-label="watchList" (click)="removemovie(movie)" style="align-items: end;">
                                     <mat-icon style="font-size: 25px;">delete_forever</mat-icon> Removefrom Wtach List
                                   </button>
                                  

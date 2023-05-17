@@ -22,6 +22,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,12 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     MatSelectModule,
     HttpClientModule,
     MatBadgeModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule,
+    MatProgressBarModule
+  ],
+  entryComponents: [
+    ConfirmDialogComponent
   ],
   providers: [JobsDataService],
   bootstrap: [AppComponent]

@@ -34,7 +34,7 @@
             <ng-container *ngIf="isEmpty">
                 <mat-card class="needspace">Search Result Not found !</mat-card>
             </ng-container>
-            <ng-container  *ngIf="movieResult.length>0">
+            <ng-container  *ngIf="!isEmpty">
                 <div *ngFor="let movie of movieResult; let i = index">
                     <mat-card class="needspace" >
 
