@@ -20,13 +20,16 @@ import { VeiwmovieComponent } from './veiwmovie/veiwmovie.component';
 import { JobsDataService } from '../app/services/DataTransfer/jobs-data.service';
 import {MatBadgeModule} from '@angular/material/badge';
 import { NavbarComponent } from './navbar/navbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
     WatchlistComponent,
     VeiwmovieComponent,
-    NavbarComponent
+    NavbarComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ReactiveFormsModule ,
     MatSelectModule,
     HttpClientModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatSnackBarModule
   ],
   providers: [JobsDataService],
   bootstrap: [AppComponent]

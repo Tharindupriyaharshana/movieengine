@@ -6,6 +6,7 @@ import { Movie } from '../interFaces/movie.model';
 import { DataProcessService } from '../services/data-process.service';
 import { JobsDataService } from '../services/DataTransfer/jobs-data.service';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -30,7 +31,7 @@ isEmpty=false;
 
   matcher = new MyErrorStateMatcher();
 
-  constructor(private dataService:DataServiceService, private dataProcess:DataProcessService,private dataShare:JobsDataService,private router: Router) { }
+  constructor(private dataService:DataServiceService, private dataProcess:DataProcessService,private dataShare:JobsDataService,private router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
    
@@ -68,5 +69,12 @@ isEmpty=false;
 
   addToWatchList(movie:Movie){
 this.dataProcess.addToWatchlist(movie);
+    this.openSnackBar("Watch List Updated","Dissmiss");
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 2000,
+    });
   }
 }

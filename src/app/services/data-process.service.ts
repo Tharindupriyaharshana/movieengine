@@ -67,6 +67,11 @@ extractMovie(response: any): Movie {
     return this.watchlist.length;
   }
 
+  getWatchList(){
+    this.loadWatchlistFromLocalStorage();
+    return this.watchlist;
+  }
+
   getWatchListListener() {
     return this.watchlistnew.asObservable();
   }
