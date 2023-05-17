@@ -1,7 +1,11 @@
 <div class="container">
     <div class="row search-bar" >
-        <div class="col-1"></div>
-        <div class="col-10"> 
+        <div class="col-6">
+            <app-watchlist></app-watchlist>
+         
+               
+        </div>
+        <div class="col-6"> 
             <form class="example-form" (ngSubmit)="submit()">
             <div class="row">
         
@@ -16,22 +20,7 @@
               <div class="col-4">
                 <button mat-raised-button color="warn" type="submit" class="example-full-width">Search</button>
               </div>
-         
-          </div>
-        </form>
-          </div>
-        <div class="col-1"></div>
-    </div>
-</div>
-
-
-
-<div class="container">
-    <div class="row search-bar">
-        <div class="col-3">
-        </div>
-        <div class="col-6">
-            <ng-container *ngIf="isEmpty">
+              <ng-container *ngIf="isEmpty">
                 <mat-card class="needspace">Search Result Not found !</mat-card>
             </ng-container>
             <ng-container  *ngIf="!isEmpty">
@@ -73,10 +62,24 @@
                   
             </ng-container>
            
+          </div>
+        </form>
+          </div>
+    
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row search-bar">
+        <div class="col-6">
+        </div>
+        <div class="col-6">
+         
 
         </div>
-        <div class="col-3">
-        </div>
+      
 
     </div>
 </div>
