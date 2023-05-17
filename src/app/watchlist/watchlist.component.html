@@ -1,0 +1,46 @@
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">     <ng-container  *ngIf="movieResult.length>0">
+            <div *ngFor="let movie of movieResult; let i = index">
+                <mat-card class="needspace" >
+
+                    <div class="row">
+                        <div class="col-6">
+                           
+                                <img  src="{{movie.Poster}}" alt="Photo of a movie"width="100%" style="border-radius: 20px;">
+                        
+                           
+                        </div>
+                        <div class="col-6">
+                            <mat-card-header>
+                     
+                                <mat-card-title>{{movie.Title}}</mat-card-title>
+                              
+                                
+                          
+                              </mat-card-header>
+                            
+                              <mat-card-content>
+                                <h5>{{movie.Released}}</h5>
+                                <button mat-icon-button color="accent" aria-label="watchList" style="align-items: end;">
+                                    <mat-icon style="font-size: 25px;">favorite</mat-icon> Add to Wtach List
+                                  </button>
+                                 
+                              </mat-card-content> 
+                              <mat-card-actions align="end">
+                                <button mat-raised-button color="accent" (click)="showmore(movie)">More detials</button>
+                              </mat-card-actions>  
+                        </div>
+                    </div>
+                    
+                  </mat-card>
+            </div>
+         
+              
+        </ng-container></div>
+    </div>
+    <div class="col-2"></div>
+</div>

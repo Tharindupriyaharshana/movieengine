@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Movie Engine</span>
+      <span class="example-spacer"></span>
+      <label style="font-size: 20px;">Watch List</label>
+      <mat-icon *ngIf="watchlistCount==0" class="example-icon" aria-hidden="false"   aria-label="Example heart icon">favorite</mat-icon>
+      <mat-icon  *ngIf="watchlistCount>0" class="example-icon" aria-hidden="false" matBadge="{{watchlistCount}}" matBadgeColor="warn"  aria-label="Example heart icon">favorite</mat-icon>
+    </mat-toolbar-row>
+  </mat-toolbar>

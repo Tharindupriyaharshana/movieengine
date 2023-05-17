@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row search-bar" >
+        <div class="col-1"></div>
+        <div class="col-10"> 
+            <form class="example-form" (ngSubmit)="submit()">
+            <div class="row">
+        
+              <div class="col-8">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Movie Name" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+                  <mat-hint>Enter the full name of the movie!</mat-hint>
+                  <mat-error *ngIf="!emailFormControl.hasError('required')">Please enter a movie name</mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">Movie name <strong>required</strong></mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-4">
+                <button mat-raised-button color="warn" type="submit" class="example-full-width">Search</button>
+              </div>
+         
+          </div>
+        </form>
+          </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row search-bar">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+            <ng-container *ngIf="isEmpty">
+                <mat-card class="needspace">Search Result Not found !</mat-card>
+            </ng-container>
+            <ng-container  *ngIf="movieResult.length>0">
+                <div *ngFor="let movie of movieResult; let i = index">
+                    <mat-card class="needspace" >
+
+                        <div class="row">
+                            <div class="col-4">
+                               
+                                    <img  src="{{movie.Poster}}" alt="Photo of a movie" height="180px" style="border-radius: 20px;">
+                            
+                               
+                            </div>
+                            <div class="col-8">
+                                <mat-card-header>
+                         
+                                    <mat-card-title>{{movie.Title}}</mat-card-title>
+                                  
+                                    
+                              
+                                  </mat-card-header>
+                                
+                                  <mat-card-content>
+                                    <h5>{{movie.Released}}</h5>
+                                    <button mat-icon-button color="accent" aria-label="watchList" style="align-items: end;" (click)="addToWatchList(movie)">
+                                        <mat-icon style="font-size: 25px;">favorite</mat-icon> Add to Wtach List
+                                      </button>
+                                     
+                                  </mat-card-content> 
+                                  <mat-card-actions align="end">
+                                    <button mat-raised-button color="accent" (click)="showmore(movie)">More detials</button>
+                                  </mat-card-actions>  
+                            </div>
+                        </div>
+                        
+                      </mat-card>
+                </div>
+             
+                  
+            </ng-container>
+           
+
+        </div>
+        <div class="col-3">
+        </div>
+
+    </div>
+</div>
