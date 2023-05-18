@@ -1,83 +1,88 @@
-
 <div class="container">
-
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">     <ng-container  *ngIf="movieResult!='undifined'">
-            <div *ngFor="let movie of movieResult; let i = index">
-                <mat-card class="needspace" >
-
-                    <div class="row">
-                        <div class="col-6">
-                           
-                                <img  src="{{movie.Poster}}" alt="Photo of a movie"width="100%" style="border-radius: 20px;">
-                        
-                           
-                        </div>
-                        <div class="col-6">
-                            <mat-card-header>
-                     
-                                <mat-card-title>{{movie.Title}}</mat-card-title>
-                              
-                                
-                          
-                              </mat-card-header>
-                            
-                              <mat-card-content>
-                                <h5>{{movie.Released}}</h5>
-                                <button mat-icon-button color="accent" aria-label="watchList" style="align-items: end;"  (click)="addToWatchList(movie)">
-                                    <mat-icon style="font-size: 25px;">favorite</mat-icon> Add to Wtach List
-                                  </button>
-                                  <br>
-                                  <br>
-                                  <div *ngIf="movie">
-                                   
-                                    <div *ngIf="movie.imdbRating">
-                                      <h5>IMB Rating: {{ movie.imdbRating }}</h5>
-                                      <mat-progress-bar mode="determinate" [value]="movie.imdbRating * 10"></mat-progress-bar>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <div *ngIf="movie.imdbRating">
-                                        <h5>Metascore: {{ movie.Metascore }}</h5>
-                                        <mat-progress-bar mode="determinate" [value]="movie.imdbRating * 100"></mat-progress-bar>
-                                      </div>
-                                    <div *ngIf="!movie.imdbRating">
-                                      <p>No rating available</p>
-                                    </div>
-                                  </div>
-                                  <br>
-                                  
-<h6>
-    {{ movie.Plot }}
-</h6>
-<br>
-                                  
-<h6>
-    Actors:  {{ movie.Actors }}
-</h6>
-
-                                  
-<h6>
-    Director:{{ movie.Director }}
-</h6>
-   
-<h6>
-    Writer:{{ movie.Writer }}
-</h6>
-&nbsp;                        
-                              </mat-card-content> 
-                              <mat-card-actions align="end">
-                                <button mat-raised-button color="accent" (click)=" backtoHome()">Back</button>
-                              </mat-card-actions>  
-                        </div>
-                    </div>
-                    
-                  </mat-card>
-            </div>
-         
-              
-        </ng-container></div>
-    </div>
+  <div class="row">
     <div class="col-1"></div>
+    <div class="col-10">
+      <ng-container *ngIf="movieResult != 'undifined'">
+        <div *ngFor="let movie of movieResult; let i = index">
+          <mat-card class="needspace">
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="{{ movie.Poster }}"
+                  alt="Photo of a movie"
+                  width="100%"
+                  style="border-radius: 20px"
+                />
+              </div>
+              <div class="col-6">
+                <mat-card-header>
+                  <mat-card-title>{{ movie.Title }}</mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                  <h5>{{ movie.Released }}</h5>
+                  <button
+                    mat-icon-button
+                    color="accent"
+                    aria-label="watchList"
+                    style="align-items: end"
+                    (click)="addToWatchList(movie)"
+                  >
+                    <mat-icon style="font-size: 25px">favorite</mat-icon> Add to
+                    Wtach List
+                  </button>
+                  <br />
+                  <br />
+                  <div *ngIf="movie">
+                    <div *ngIf="movie.imdbRating">
+                      <h5>IMB Rating: {{ movie.imdbRating }}</h5>
+                      <mat-progress-bar
+                        mode="determinate"
+                        [value]="movie.imdbRating * 10"
+                      ></mat-progress-bar>
+                    </div>
+                    <br />
+                    <br />
+                    <div *ngIf="movie.imdbRating">
+                      <h5>Metascore: {{ movie.Metascore }}</h5>
+                      <mat-progress-bar
+                        mode="determinate"
+                        [value]="movie.imdbRating * 100"
+                      ></mat-progress-bar>
+                    </div>
+                    <div *ngIf="!movie.imdbRating">
+                      <p>No rating available</p>
+                    </div>
+                  </div>
+                  <br />
+
+                  <h6>
+                    {{ movie.Plot }}
+                  </h6>
+                  <br />
+
+                  <h6>Actors: {{ movie.Actors }}</h6>
+
+                  <h6>Director:{{ movie.Director }}</h6>
+
+                  <h6>Writer:{{ movie.Writer }}</h6>
+                  &nbsp;
+                </mat-card-content>
+                <mat-card-actions align="end">
+                  <button
+                    mat-raised-button
+                    color="accent"
+                    (click)="backtoHome()"
+                  >
+                    Back
+                  </button>
+                </mat-card-actions>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="col-1"></div>
 </div>

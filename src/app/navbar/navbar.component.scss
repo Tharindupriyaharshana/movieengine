@@ -1,7 +1,14 @@
 .example-icon {
-    padding: 20 14px;
-  }
-  
-  .example-spacer {
-    flex: 1 1 auto;
-  }
+  padding: 20 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.right-section {
+  padding-left: 72%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

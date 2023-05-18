@@ -1,46 +1,50 @@
-
 <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <ng-container *ngIf="movieResult.length > 0">
+        <div *ngFor="let movie of movieResult[0]; let i = index" class="cards">
+          <mat-card class="needspace">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="{{ movie.Poster }}"
+                  alt="Photo of a movie"
+                  width="100%"
+                  style="border-radius: 20px"
+                />
+              </div>
+              <div class="col-8">
+                <mat-card-header>
+                  <mat-card-title>{{ movie.Title }}</mat-card-title>
+                </mat-card-header>
 
-    <div class="row">
-    
-        <div class="col-12">     <ng-container  *ngIf="movieResult.length>0">
-            <div *ngFor="let movie of movieResult[0]; let i = index" class="cards">
-                <mat-card class="needspace" >
-
-                    <div class="row">
-                        <div class="col-4">
-                           
-                                <img  src="{{movie.Poster}}" alt="Photo of a movie"width="100%" style="border-radius: 20px;">
-                        
-                           
-                        </div>
-                        <div class="col-8">
-                            <mat-card-header>
-                     
-                                <mat-card-title>{{movie.Title}}</mat-card-title>
-                              
-                                
-                          
-                              </mat-card-header>
-                            
-                              <mat-card-content>
-                                <h5>{{movie.Released}}</h5>
-                                <button mat-icon-button color="primary" aria-label="watchList" (click)="removemovie(movie)" style="align-items: end;">
-                                    <mat-icon style="font-size: 25px;">delete_forever</mat-icon> Removefrom Wtach List
-                                  </button>
-                                 
-                              </mat-card-content> 
-                              <mat-card-actions align="end">
-                                <button mat-raised-button color="accent" (click)="showmore(movie)">More detials</button>
-                              </mat-card-actions>  
-                        </div>
-                    </div>
-                    
-                  </mat-card>
+                <mat-card-content>
+                  <h5>{{ movie.Released }}</h5>
+                  <button
+                    mat-icon-button
+                    color="primary"
+                    aria-label="watchList"
+                    (click)="removemovie(movie)"
+                    style="align-items: end"
+                  >
+                    <mat-icon style="font-size: 25px">delete_forever</mat-icon>
+                    Removefrom Wtach List
+                  </button>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                  <button
+                    mat-raised-button
+                    color="accent"
+                    (click)="showmore(movie)"
+                  >
+                    More detials
+                  </button>
+                </mat-card-actions>
+              </div>
             </div>
-         
-              
-        </ng-container></div>
+          </mat-card>
+        </div>
+      </ng-container>
     </div>
-
+  </div>
 </div>
