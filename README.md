@@ -1,6 +1,11 @@
 # Moviesearch
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+Documentation
+https://tharindus-organization.gitbook.io/movieengine
+
+Hosted Version
+https://snapaddy-cb102.web.app/
 
 ## Development server
 
